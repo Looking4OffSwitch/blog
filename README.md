@@ -126,6 +126,35 @@ def hello():
 ```
 ````
 
+### Long lines in code blocks
+
+Code blocks don't wrap text - long lines require horizontal scrolling, which is poor UX. Break long commands across multiple lines using backslashes:
+
+**Bad** (requires scrolling):
+````markdown
+```bash
+/some-command "very long argument that goes on and on and requires horizontal scrolling to read"
+```
+````
+
+**Good** (wraps naturally):
+````markdown
+```bash
+/some-command \
+  "very long argument that goes on and on" \
+  --flag value
+```
+````
+
+For long strings inside quotes, you can also break within the string:
+````markdown
+```bash
+/command \
+  "First part of a long string. \
+   Second part continues here."
+```
+````
+
 ### Lists
 
 ```markdown

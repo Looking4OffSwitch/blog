@@ -76,8 +76,14 @@ The optional `**HARD STOP**` marker pauses iteration for manual verification bef
 
 **Full example:**
 
-```
-/ralph-wiggum:ralph-loop "Go through TODO.md step-by-step and check off every step once complete. When you encounter a task marked HARD STOP, use AskUserQuestion to get confirmation before proceeding. If blocked, output <promise>BLOCKED</promise> with an explanation." --completion-promise "DONE" --max-iterations 50
+```bash
+/ralph-wiggum:ralph-loop \
+  "Go through TODO.md step-by-step and check off every step once complete. \
+   When you encounter a task marked HARD STOP, use AskUserQuestion to get \
+   confirmation before proceeding. If blocked, output \
+   <promise>BLOCKED</promise> with an explanation." \
+  --completion-promise "DONE" \
+  --max-iterations 50
 ```
 
 ### 3. Troubleshooting permissions
