@@ -1,13 +1,23 @@
 title: Looking4OffSwitch's Blog
+subtitle: Technology, Programming, and Life
 description: A personal blog about technology, programming, and life.
 baseurl: "/blog"
 url: "https://Looking4OffSwitch.github.io"
 
-# Build settings
-theme: minima
+# Theme
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "dark"
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-include-cache
+  - jekyll-paginate
+
+# Pagination
+paginate: 10
+paginate_path: /page:num/
 
 # Permalink structure
 permalink: /:year/:month/:day/:title/
@@ -15,14 +25,31 @@ permalink: /:year/:month/:day/:title/
 # Author info
 author:
   name: Looking4OffSwitch
-  email: lookingfortheoffswitch@gmail.com
+  bio: "Former senior engineer on the Visual Studio team at MS and the Xcode team at Apple. I love making tools for developers!"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:lookingfortheoffswitch@gmail.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/Looking4OffSwitch"
 
-# Social links (optional - uncomment and edit as needed)
-# twitter_username: yourusername
-# github_username: Looking4OffSwitch
+# Site defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
 
 # Exclude from processing
 exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - run_local.sh

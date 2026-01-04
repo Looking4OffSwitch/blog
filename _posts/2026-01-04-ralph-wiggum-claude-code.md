@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "A Claude Code plugin for iterative, self-referential AI development loops."
 date: 2026-01-04
 categories: claude-code
