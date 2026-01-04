@@ -63,7 +63,7 @@ The optional `**HARD STOP**` marker pauses iteration for manual verification bef
 | Parameter | Description | Default |
 |-----------|-------------|---------|
 | `<prompt>` | The instruction for Claude to follow | Required |
-| `--max-iterations <n>` | Maximum number of iteration cycles | Unlimited |
+| `--max-iterations <n>` | Maximum number of iteration cycles | <span style="color: #dc3545;">Unlimited</span> |
 | `--completion-promise <text>` | Text that signals successful completion | None |
 
 **Important:** Although `--max-iterations` is optional, you should always specify a value. Without it, Claude will loop indefinitely until it outputs the completion promise or you manually stop it.
