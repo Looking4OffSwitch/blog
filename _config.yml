@@ -1,5 +1,5 @@
-title: My Blog
-description: A personal blog
+title: Looking4OffSwitch's Blog
+description: A personal blog about technology, programming, and life.
 baseurl: "/blog"
 url: "https://Looking4OffSwitch.github.io"
 
@@ -14,8 +14,8 @@ permalink: /:year/:month/:day/:title/
 
 # Author info
 author:
-  name: Your Name
-  email: your-email@example.com
+  name: Looking4OffSwitch
+  email: lookingfortheoffswitch@gmail.com
 
 # Social links (optional - uncomment and edit as needed)
 # twitter_username: yourusername
