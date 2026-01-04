@@ -4,6 +4,4 @@ title: About
 permalink: /about/
 ---
 
-This is my personal blog where I share my thoughts and ideas.
-
-Feel free to reach out if you'd like to connect!
+I was a senior engineer on the Visual Studio team at Microsoft and the Xcode team at Apple. I love making tools for developers!
