@@ -1,0 +1,69 @@
+---
+---
+
+// Typography (matching simonwillison.net)
+$global-font-family: "Helvetica Neue", Helvetica, sans-serif;
+$serif: Georgia, Times, serif;
+$sans-serif: "Helvetica Neue", Helvetica, sans-serif;
+$monospace: Consolas, Monaco, "Courier New", monospace;
+
+@import "minimal-mistakes/skins/dark";
+@import "minimal-mistakes";
+
+// Typography overrides
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.45;
+}
+
+.page__content {
+  p, li, dl {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+}
+
+// Increase content width
+.page {
+  @include breakpoint($large) {
+    padding-right: 0;
+  }
+}
+
+.page__content {
+  max-width: 100%;
+}
+
+// Wider content area
+.archive,
+.page__content {
+  @include breakpoint($large) {
+    width: calc(100% - 200px);
+    max-width: none;
+  }
+
+  @include breakpoint($x-large) {
+    width: calc(100% - 200px);
+    max-width: none;
+  }
+}
+
+// Ensure sidebar doesn't take too much space
+.sidebar {
+  @include breakpoint($large) {
+    width: 200px;
+  }
+}
+
+// Full width on mobile (default behavior, just ensuring it)
+@media (max-width: 64em) {
+  .page__content,
+  .archive {
+    width: 100%;
+    max-width: 100%;
+  }
+}

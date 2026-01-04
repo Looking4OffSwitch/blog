@@ -1,17 +1,12 @@
 ---
 layout: single
-title: "A Claude Code plugin for iterative, self-referential AI development loops."
+title: "ralph-wiggum: The Claude Code plugin for autonomous, long-running multi-task execution loops"
 date: 2026-01-04
 categories: claude-code
 ---
-
-# ralph-wiggum
-
-A Claude Code plugin for iterative, self-referential AI development loops.
-
 ## Overview
 
-`ralph-wiggum` enables Claude Code to work on long-running tasks autonomously by implementing a stop-hook pattern that intercepts session exits and re-prompts Claude with the original task. This allows you to define a list of tasks and have Claude work through them for hours without manual intervention.
+Anthropic provides the [ralph-wiggum](https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum) plugin to enable Claude Code to work on long-running tasks autonomously. It implements a stop-hook pattern that intercepts session exits and re-prompts Claude with the original task, allowing you to define a list of tasks and have Claude work through them for hours without manual intervention.
 
 **Use cases:**
 
@@ -20,7 +15,9 @@ A Claude Code plugin for iterative, self-referential AI development loops.
 - Batch refactoring across a codebase
 - Any workflow with N discrete tasks that can be tracked via a TODO file
 
-## Installation
+**WARNING:** If you aren't careful, Claude will happily burn through all your tokens. Start small and always specify the maximum number of allowable iterations.
+
+## Setup
 
 1. Launch Claude Code
 2. Run `/plugin`
@@ -35,7 +32,7 @@ A Claude Code plugin for iterative, self-referential AI development loops.
 Create a `TODO.md` (or similar) with checkbox-style tasks:
 
 ```markdown
-# Project Setup
+# Ralph Demo: Next.js To-Do List Application
 
 ## Tasks
 - [ ] 1. Initialize project with npm
@@ -58,18 +55,26 @@ The optional `**HARD STOP**` marker pauses iteration for manual verification bef
 ### 2. Start the loop
 
 ```
-/ralph-wiggum:ralph-loop PROMPT [--max-iterations N] [--completion-promise TEXT]
+/ralph-wiggum:ralph-loop <prompt> [--max-iterations N] [--completion-promise TEXT]
 ```
 
 **Parameters:**
 
 | Parameter | Description | Default |
 |-----------|-------------|---------|
-| `PROMPT` | The instruction for Claude to follow | Required |
-| `--max-iterations` | Maximum number of iteration cycles | None |
-| `--completion-promise` | Text that signals successful completion | None |
+| `<prompt>` | The instruction for Claude to follow | Required |
+| `--max-iterations <n>` | Maximum number of iteration cycles | Unlimited |
+| `--completion-promise <text>` | Text that signals successful completion | None |
 
-**Example:**
+**Important:** Although `--max-iterations` is optional, you should always specify a value. Without it, Claude will loop indefinitely until it outputs the completion promise or you manually stop it.
+
+**Building your prompt:**
+
+- Tell Claude what to do: *"Go through TODO.md step-by-step and check off every step once complete."*
+- Ensure Claude stops at appropriate points: *"When you encounter a task marked HARD STOP, use AskUserQuestion to get confirmation before proceeding."*
+- Handle blocked scenarios: *"If blocked, output \<promise\>BLOCKED\</promise\> with an explanation."*
+
+**Full example:**
 
 ```
 /ralph-wiggum:ralph-loop "Go through TODO.md step-by-step and check off every step once complete. When you encounter a task marked HARD STOP, use AskUserQuestion to get confirmation before proceeding. If blocked, output <promise>BLOCKED</promise> with an explanation." --completion-promise "DONE" --max-iterations 50
@@ -157,8 +162,8 @@ This transforms Claude from a **single-task executor** into an **autonomous task
 ## Documentation
 
 Full plugin source and additional documentation:  
-https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum
+[https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum](https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum)
 
-## License
+## Video 
 
-See the [Claude Code repository](https://github.com/anthropics/claude-code) for license information.
+[Developer's Digest](https://www.youtube.com/@DevelopersDigest) has a detailed [video](https://www.youtube.com/watch?v=o-pMCoVPN_k) that provides background and more information about hooks.
