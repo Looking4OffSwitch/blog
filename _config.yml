@@ -1,0 +1,28 @@
+title: My Blog
+description: A personal blog
+baseurl: "/blog"
+url: "https://Looking4OffSwitch.github.io"
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Permalink structure
+permalink: /:year/:month/:day/:title/
+
+# Author info
+author:
+  name: Your Name
+  email: your-email@example.com
+
+# Social links (optional - uncomment and edit as needed)
+# twitter_username: yourusername
+# github_username: Looking4OffSwitch
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
