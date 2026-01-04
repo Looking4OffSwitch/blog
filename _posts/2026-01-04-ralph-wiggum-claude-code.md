@@ -170,6 +170,12 @@ This transforms Claude from a **single-task executor** into an **autonomous task
 Full plugin source and additional documentation:  
 [https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum](https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum)
 
-## Video 
+## Video
 
 [Developer's Digest](https://www.youtube.com/@DevelopersDigest) has a detailed [video](https://www.youtube.com/watch?v=o-pMCoVPN_k) that provides background and more information about hooks.
+
+## Why "Ralph Wiggum"?
+
+The plugin is named after [Ralph Wiggum](https://en.wikipedia.org/wiki/Ralph_Wiggum), the lovably oblivious character from *The Simpsons*. Ralph embodies a philosophy of relentless iteration in the face of failure—he keeps trying, unbothered by setbacks, blissfully unaware of obstacles that would stop others.
+
+This captures the spirit of the plugin: Claude keeps going, iteration after iteration, working through your task list with cheerful persistence until the job is done (or you tell it to stop).
